@@ -1,0 +1,8 @@
+curso_homepage:
+    resource: "@CursoBundle/Controller/"
+    type:     annotation
+    prefix:   /curso
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

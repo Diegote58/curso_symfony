@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+{% block title %}My cool blog posts{% endblock %}
+
+{% block body %}
+        <br>
+        <br>
+        <form action="{{ path('empresa_show') }}" method="post" class="form-horizontal">
+                <div class="form-group">
+                        {{ form_label(form.nombre,null, {'label_attr': {'class': 'col-2 control-label'}}) }}
+                        <div class="col-md-3">
+                                {{ form_widget(form.nombre) }}
+                        </div>
+                </div>
+                <div class="form-group">
+                        {{ form_label(form.ciudad,null, {'label_attr': {'class': 'col-2 control-label'}}) }}
+                        <div class="col-md-3">
+                                {{ form_widget(form.ciudad) }}
+                        </div>
+                </div>
+                <div class="form-group">
+                        {{ form_label(form.numEmpleados,null, {'label_attr': {'class': 'col-2 control-label'}}) }}
+                        <div class="col-md-3">
+                                {{ form_widget(form.numEmpleados) }}
+                        </div>
+                </div>
+                {{ form_row(form._token) }}
+                <!--     <input type="submit" class="btn btn-primary col-md-offset-3"/>       -->
+                {{ form_widget(form.Guardar,{'attr': {'class': 'btn btn-primary col-md-offset-2'}}) }}
+                {{ form_widget(form.Resetear,{'attr': {'class': 'btn btn-primary col-md-offset-0'}}) }}
+        </form>
+{% endblock %}
